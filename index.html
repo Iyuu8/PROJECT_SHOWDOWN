@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Thematic Tournament</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="app">
+			<aside class="sidebar">
+				<div class="brand">
+					<div class="brand-icon">🏆</div>
+					<div>
+						<p>Thematic</p>
+						<h1>Tournament</h1>
+					</div>
+				</div>
+				<nav class="nav">
+					<a class="nav-item" href="#">Dashboard</a>
+					<a class="nav-item active" href="#">Tournament</a>
+					<a class="nav-item" href="#">Teams</a>
+					<a class="nav-item" href="#">Settings</a>
+				</nav>
+				<button id="restartBtn" class="btn outline">Restart Tournament</button>
+			</aside>
+
+			<main class="main">
+				<header class="topbar">
+					<div>
+						<h2>Tournament</h2>
+						<p>12 Teams • 1 Champion</p>
+					</div>
+					<div class="top-actions">
+						<button id="drawBtn" class="btn primary">
+							Tirage au Sort
+							<span>Randomize Pairs</span>
+						</button>
+						<button id="exportBtn" class="icon-btn" aria-label="Export results">
+							ⓘ
+						</button>
+					</div>
+				</header>
+
+				<section class="stage-cards">
+					<div class="stage-card active">
+						<h3>Round of 12</h3>
+						<p>6 Matches</p>
+					</div>
+					<div class="stage-card">
+						<h3>Quarter Finals</h3>
+						<p>3 Matches</p>
+					</div>
+					<div class="stage-card">
+						<h3>Semi Finals</h3>
+						<p>Final 3</p>
+					</div>
+					<div class="stage-card">
+						<h3>Final</h3>
+						<p>1 Champion</p>
+					</div>
+				</section>
+
+				<section class="content">
+					<div class="bracket">
+						<div class="bracket-col">
+							<h4>Round of 12</h4>
+							<div id="round1" class="match-list"></div>
+						</div>
+						<div class="bracket-col">
+							<h4>Quarter Finals</h4>
+							<div id="round2" class="match-list"></div>
+						</div>
+						<div class="bracket-col">
+							<h4>Semi Finals</h4>
+							<div id="final3" class="match-list"></div>
+						</div>
+						<div class="bracket-col final-col">
+							<h4>Final</h4>
+							<div id="finalWinner" class="final-card"></div>
+						</div>
+					</div>
+
+					<aside class="right-panel">
+						<div class="panel">
+							<div class="panel-header">
+								<h5>Classification</h5>
+								<span class="pill">Live ranking</span>
+							</div>
+							<div id="standings" class="standings"></div>
+						</div>
+						<div class="panel help">
+							<h5>How it works</h5>
+							<ul>
+								<li>Randomize the initial pairs with Tirage au Sort</li>
+								<li>Manually select the winner of each match</li>
+								<li>Winners advance to the next round</li>
+								<li>The final winner is the champion</li>
+							</ul>
+							<button id="exportBtnAlt" class="btn outline">Export results</button>
+						</div>
+					</aside>
+				</section>
+			</main>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>
