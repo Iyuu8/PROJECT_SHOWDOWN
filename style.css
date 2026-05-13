@@ -24,7 +24,7 @@ body {
 	background: linear-gradient(135deg, #f6f5ff 0%, #f9fbff 100%);
 	color: var(--ink);
 	min-height: 100vh;
-	overflow: hidden;
+	overflow: auto;
 }
 
 .app {
@@ -200,6 +200,11 @@ body {
 	grid-template-columns: minmax(0, 3fr) minmax(0, 1.1fr);
 	gap: 14px;
 	min-height: 0;
+	height: 100%;
+}
+
+.content.single {
+	grid-template-columns: minmax(0, 1fr);
 }
 
 .bracket {
@@ -211,7 +216,8 @@ body {
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 10px;
 	min-height: 0;
-	overflow: hidden;
+	height: 100%;
+	overflow: auto;
 }
 
 .bracket-col h4 {
@@ -225,6 +231,10 @@ body {
 .match-list {
 	display: grid;
 	gap: 12px;
+	min-height: 0;
+	max-height: 100%;
+	overflow-y: auto;
+	padding-right: 4px;
 }
 
 .match-card {
@@ -296,6 +306,7 @@ body {
 .right-panel {
 	display: grid;
 	gap: 12px;
+	min-height: 0;
 }
 
 .panel {
@@ -339,6 +350,21 @@ body {
 	border: 1px solid var(--line);
 	background: #ffffff;
 	font-weight: 700;
+}
+
+.standings-left {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.standings-rank {
+	font-size: 0.72rem;
+	color: var(--muted);
+	font-weight: 600;
+	background: rgba(124, 92, 246, 0.12);
+	padding: 4px 8px;
+	border-radius: 999px;
 }
 
 .badge {
